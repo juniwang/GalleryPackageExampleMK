@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Definition xmlns="http://schemas.microsoft.com/aux/2013/pdl"
+            xmlns:azurefx="http://schemas.microsoft.com/aux/2013/pdl/azurefx"
+            Area="Resource">
+  
+  <azurefx:PropertiesBlade Name="PropertiesBlade"
+                           ViewModel="{ViewModel Name=PropertiesBladeViewModel, Module=./Properties/ViewModels/PropertiesBladeViewModel}"
+                           PartViewModel="{ViewModel Name=PropertiesPartViewModel, Module=./Properties/ViewModels/PropertiesPartViewModel}"
+                           Parameter="id" />
+</Definition>

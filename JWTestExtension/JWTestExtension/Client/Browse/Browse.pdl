@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Definition xmlns="http://schemas.microsoft.com/aux/2013/pdl"
+            xmlns:azurefx="http://schemas.microsoft.com/aux/2013/pdl/azurefx"
+            Area="Browse">
+
+  <AssetType Name="MyResource"
+              ViewModel="{ViewModel Name=AssetTypeViewModel, Module=../Browse/ViewModels/AssetTypeViewModel}"
+              PartName="ResourcePart"
+              BladeName="ResourceBlade"
+              UseResourceMenu="True"
+              UseStaticResourceMenuOverview="True"
+              PluralDisplayName="{Resource AssetTypeNames.Resource.plural, Module=ClientResources}"
+              SingularDisplayName="{Resource AssetTypeNames.Resource.singular, Module=ClientResources}"
+              LowerPluralDisplayName="{Resource AssetTypeNames.Resource.lowerPlural, Module=ClientResources}"
+              LowerSingularDisplayName="{Resource AssetTypeNames.Resource.lowerSingular, Module=ClientResources}"
+              Icon="{Resource Icons.cloudService, Module=../Shared/Icons}">
+    <Browse Type="ResourceType" />
+    <ResourceType ResourceTypeName="Microsoft.PortalSdk/rootResources" ApiVersion="2014-04-01" />
+  </AssetType>
+
+  <!--
+    This part represents an overview of a resource, and is available to be used
+    on the startboard, or inside of a blade.  You refer to this part in the AssetType
+    declaration above, so it can be used by notifications and browse.
+  -->
+  <Part Name="ResourcePart"
+        ViewModel="{ViewModel Name=ResourcePartViewModel, Module=../Browse/ViewModels/ResourcePartViewModel}"
+        PartKind="Asset"
+        AssetType="MyResource"
+        AssetIdProperty="id">
+    <Part.Properties>
+      <Property Name="id"
+                Source="{DataInput Property=id}" />
+    </Part.Properties>
+
+    <BladeAction Blade="ResourceBlade">
+      <BladeInput Parameter="id" Source="assetId" />
+    </BladeAction>
+
+  </Part>
+</Definition>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Definition xmlns="http://schemas.microsoft.com/aux/2013/pdl"
+            xmlns:azurefx="http://schemas.microsoft.com/aux/2013/pdl/azurefx"
+            Area="Resource">
+  
+  <CommandGroup Name="MoveResource">
+    <CommandReference Name="MoveResourceCommand" Extension="HubsExtension" CommandType="MoveResourceCommand">
+      <Binding Property="resourceId" Source="{Constant overrideInBlade}" />
+    </CommandReference>
+  </CommandGroup>
+  
+  <Blade Name="ResourceBlade" ViewModel="{ViewModel Name=ResourceBladeViewModel, Module=./Summary/ViewModels/ResourceBladeViewModel}"
+         AssetType="MyResource"
+         AssetIdProperty="id"
+         Style="Action">   
+    <Blade.Parameters>
+      <Parameter Name="id" Type="Key" />
+    </Blade.Parameters>
+    <Blade.Properties>
+      <Property Name="id"
+                Source="{BladeParameter id}"/>
+    </Blade.Properties>
+    <PinnedPart PartType="ResourcePart" />
+    
+    <CommandGroupReference Name="MoveResource">
+      <CommandBindings Command="MoveResourceCommand">
+        <Binding Property="resourceId" Source="{BladeParameter Name=id}" />
+      </CommandBindings>
+    </CommandGroupReference>
+
+    <!-- ResourceSummray provides quick access to key properties that the consumers of the extension may want to use and also quick links
+         to common blades keys, quickstart, users, tags, settings -->
+    <ResourceSummary Name="ResourceSummary"
+                 ViewModel="{ViewModel Name=ResourceSummaryPartViewModel, Module=./Summary/ViewModels/ResourceSummaryPartViewModel}"
+                 ItemCount="3"
+                 ResourceIdSource="{BladeParameter Name=id}"/>
+
+    <!-- placeholder lenses will contain parts that are common to all extensions -->
+    <Lens Name="MonitoringLens" Title="{Resource monitoringLensTitle, Module=ClientResources}">
+    </Lens>
+    
+  </Blade>
+
+</Definition>

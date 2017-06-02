@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Definition xmlns="http://schemas.microsoft.com/aux/2013/pdl">
+  <Extension Name="JWTestExtension" Version="1.0" EntryPointModulePath="Program" />
+</Definition>

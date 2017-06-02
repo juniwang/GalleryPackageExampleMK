@@ -1,0 +1,7 @@
+{
+  "displayName": "JWTestExtension",
+  "publisherDisplayName": "Microsoft",
+  "summary": "Deploy highly-available, infinitely-scalable applications and APIs.",
+  "longSummary": "Deploy highly-available, infinitely-scalable applications and APIs.",
+  "description": "<p>Quickly deploy and manage powerful applications and services. Simply upload your application, and Microsoft Azure handles the deployment details. From provisioning and load balancing to health monitoring for continuous availability. Your application is backed by an industry leading 99.95% monthly SLA. You just focus on the application and not the infrastructure. It's that good.</p>\n<p>Use Azure to:</p>\n<ul>\n<li>Focus on your application, not the infrastructure</li>\n<li>Develop internet-scale API's for a world of devices</li>\n<li>Build modern, cloud architectures</li>\n<li>Monitor and alert (preview)</li>\n<li>Auto scale to optimize cost and performance</li>\n</ul>"
+}

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Definition xmlns="http://schemas.microsoft.com/aux/2013/pdl"
+            xmlns:azurefx="http://schemas.microsoft.com/aux/2013/pdl/azurefx"
+            ModulePath="./Create/ViewModels"
+            Area="Resource">
+  <TemplateBlade Name="CreateBlade" Export="True"
+         ViewModel="CreateBladeViewModel"
+         Style="Create"
+         Width="Small"
+         Template="{Html Source='Templates\\Create.html'}"
+         ParameterProvider="true">
+
+    <ActionBar ActionBarKind="Create" />
+
+  </TemplateBlade>
+</Definition>

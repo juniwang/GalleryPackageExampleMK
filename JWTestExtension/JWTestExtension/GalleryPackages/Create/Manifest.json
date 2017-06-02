@@ -1,0 +1,44 @@
+﻿{
+   "$schema": "https://gallery.azure.com/schemas/2014-09-01/manifest.json#",
+    "name": "GalleryPackage",
+    "publisher": "Microsoft",
+    "version": "1.0.1-preview",
+    "displayName": "ms-resource:displayName",
+    "publisherDisplayName": "ms-resource:publisherDisplayName",
+    "publisherLegalName": "ms-resource:publisherDisplayName",
+    "summary": "ms-resource:summary",
+    "description": "ms-resource:description",
+    "longSummary": "ms-resource:longSummary",
+    "longDescription": "ms-resource:description",
+    "properties": [],
+    "artifacts": [
+        {
+            "name": "CreateResource",
+            "type": "Template",
+            "path": "DeploymentTemplates\\CreateResource.json",
+            "isDefault": true
+        }
+    ],
+    "links":[
+        { "id": "0", "displayName": "Documentation", "uri": "http://azure.microsoft.com/en-us/documentation/services/cloud-services/" },
+        { "id": "1", "displayName": "Service Overview", "uri": "http://azure.microsoft.com/en-us/services/cloud-services/" },
+        { "id": "2", "displayName": "Solutions you can deliver", "uri": "http://azure.microsoft.com/en-us/solutions/web/" },
+        { "id": "3", "displayName": "Pricing details", "uri": "http://azure.microsoft.com/en-us/pricing/details/cloud-services/" }
+    ],
+    "icons": {
+      "Small": "Icons\\Small.png",
+      "Medium": "Icons\\Medium.png",
+      "Large": "Icons\\Large.png",
+      "Wide": "Icons\\Wide.png"
+    },
+    "products": [],
+    "screenshots": ["Screenshots\\Image01.png"],
+    "categories":["virtualMachineRecommended", "virtualMachine", "azureCertified"],
+    "uiDefinition": {
+        "path": "UIDefinition.json"
+    },
+    "filters": [
+        // type: Country, Subscription, Resources, HideKey, OfferType, OfferCategory
+        { "type": "HideKey", "value": "JWTestExtensionHidden" }
+    ]
+}

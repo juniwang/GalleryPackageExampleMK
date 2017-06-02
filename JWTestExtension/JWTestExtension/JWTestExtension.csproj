@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props') And '$(EnvironmentConfig)' == ''" />
+  <Import Project="$(EnvironmentConfig)" Condition="'$(EnvironmentConfig)' != ''" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <CreateInPlace>true</CreateInPlace>
+    <NuGetPackageImportStamp>9b1bd434</NuGetPackageImportStamp>
+    <GalleryPackagesSourceFolder>$(ProjectDir)GalleryPackages</GalleryPackagesSourceFolder>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6C088569-F0CE-4367-B087-EE77D4A4252A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Portal.Extensions.JWTestExtension</RootNamespace>
+    <AssemblyName>Microsoft.Portal.Extensions.JWTestExtension</AssemblyName>
+    <OutputPath>bin</OutputPath>
+    <ContentName>DefaultProjectTemplate</ContentName>
+    <PackagesDir>$([System.IO.Path]::Combine($(SolutionDir), "packages"))</PackagesDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' And '$(EnvironmentConfig)' == '' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' And '$(EnvironmentConfig)' == '' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptNoImplicitAny>true</TypeScriptNoImplicitAny>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+    <TypeScriptGeneratesDeclarations>false</TypeScriptGeneratesDeclarations>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptNoImplicitAny>true</TypeScriptNoImplicitAny>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+    <TypeScriptGeneratesDeclarations>false</TypeScriptGeneratesDeclarations>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PowerArgs">
+      <HintPath>..\..\packages\\PowerArgs.2.7.1.0\lib\net45\PowerArgs.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>..\..\packages\\System.IdentityModel.Tokens.Jwt.4.0.0\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="Microsoft.Spatial">
+      <HintPath>..\..\packages\\Microsoft.Spatial.6.4.0\lib\portable-net40+sl5+wp8+win8\Microsoft.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\packages\\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Edm">
+      <HintPath>..\..\packages\\Microsoft.OData.Edm.6.4.0\lib\portable-net40+sl5+wp8+win8\Microsoft.OData.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Core">
+      <HintPath>..\..\packages\\Microsoft.OData.Core.6.4.0\lib\portable-net40+sl5+wp8+win8\Microsoft.OData.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client">
+      <HintPath>..\..\packages\\Microsoft.Data.Services.Client.5.6.3\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Gallery.Common">
+      <HintPath>..\..\packages\\Microsoft.Azure.Gallery.Common.5.1.0.19\lib\net45\Microsoft.Azure.Gallery.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors">
+      <HintPath>..\..\packages\\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\..\packages\\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Portal.AadCore">
+      <HintPath>..\..\packages\\Microsoft.Portal.Security.AadCore.5.0.302.607\lib\net45\Microsoft.Portal.AadCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Portal.Azure">
+      <HintPath>..\..\packages\\Microsoft.Portal.Framework.5.0.302.607\lib\net45\Microsoft.Portal.Azure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Portal.Core">
+      <HintPath>..\..\packages\\Microsoft.Portal.Framework.5.0.302.607\lib\net45\Microsoft.Portal.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Portal.Framework">
+      <HintPath>..\..\packages\\Microsoft.Portal.Framework.5.0.302.607\lib\net45\Microsoft.Portal.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Portal.TypeMetadata">
+      <HintPath>..\..\packages\\Microsoft.Portal.TypeMetadata.5.0.302.607\lib\net45\Microsoft.Portal.TypeMetadata.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsAzureEventSource">
+      <HintPath>..\..\packages\\Microsoft.Portal.Framework.5.0.302.607\lib\net45\WindowsAzureEventSource.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsAzureTelemetryEvents">
+      <HintPath>..\..\packages\\Microsoft.Portal.Framework.5.0.302.607\lib\net45\WindowsAzureTelemetryEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <Private>True</Private>
+      <HintPath>..\..\packages\\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\..\packages\\Microsoft.WindowsAzure.ConfigurationManager.2.0.1.0\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime">
+      <HintPath>..\..\packages\\Microsoft.Portal.Framework.5.0.302.607\lib\net45\Microsoft.WindowsAzure.ServiceRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage">
+      <HintPath>..\..\packages\\WindowsAzure.Storage.4.3.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <Private>True</Private>
+      <HintPath>..\..\packages\\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <Private>True</Private>
+      <HintPath>..\..\packages\\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <Private>True</Private>
+      <HintPath>..\..\packages\\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.OData">
+      <Private>True</Private>
+      <HintPath>..\..\packages\\Microsoft.AspNet.OData.5.2.0\lib\net45\System.Web.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\..\packages\\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc">
+      <Private>True</Private>
+      <HintPath>..\..\packages\\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor">
+      <Private>True</Private>
+      <HintPath>..\..\packages\\Microsoft.AspNet.Razor.3.2.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <Private>True</Private>
+      <HintPath>..\..\packages\\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment">
+      <Private>True</Private>
+      <HintPath>..\..\packages\\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor">
+      <Private>True</Private>
+      <HintPath>..\..\packages\\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\..\packages\\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Client\Browse\BrowseArea.ts" />
+    <TypeScriptCompile Include="Client\ClientResources.d.ts" />
+    <TypeScriptCompile Include="Client\QuickStart\QuickStartArea.ts" />
+    <TypeScriptCompile Include="Client\Resource\Create\Models\CreateModel.ts" />
+    <TypeScriptCompile Include="Client\Resource\Create\ViewModels\CreateBladeViewModel.ts" />
+    <TypeScriptCompile Include="Client\Resource\Properties\ViewModels\PropertiesPartViewModel.ts" />
+    <TypeScriptCompile Include="Client\Resource\Properties\ViewModels\PropertiesBladeViewModel.ts" />
+    <TypeScriptCompile Include="Client\Resource\SubscriptionsData.ts" />
+    <TypeScriptCompile Include="Client\Shared\Icons.ts" />
+    <TypeScriptCompile Include="Client\Browse\ViewModels\AssetTypeViewModel.ts" />
+    <TypeScriptCompile Include="Client\Browse\ViewModels\ResourcePartViewModel.ts" />
+    <TypeScriptCompile Include="Client\Resource\ResourceArea.ts" />
+    <TypeScriptCompile Include="Client\Resource\Summary\ViewModels\ResourceBladeViewModel.ts" />
+    <TypeScriptCompile Include="Client\QuickStart\ViewModels\QuickStartBladeViewModel.ts" />
+    <TypeScriptCompile Include="Client\QuickStart\ViewModels\QuickStartInfoListViewModel.ts" />
+    <TypeScriptCompile Include="Client\QuickStart\ViewModels\QuickStartPartViewModel.ts" />
+    <Svg Include="Content\SVG\sample.svg" />
+    <EmbeddedResource Include="Content\Config\portal.azure.com.json" />
+    <TypeScriptCompile Include="Client\Resource\Summary\ViewModels\ResourceSummaryPartViewModel.ts" />
+    <Content Include="Client\Resource\Create\Templates\Create.html" />
+    <PortalDefinition Include="Client\Resource\Properties\Properties.pdl" />
+    <None Include="GalleryPackages\Create\Icons\Large.png" />
+    <None Include="GalleryPackages\Create\Icons\Medium.png" />
+    <None Include="GalleryPackages\Create\Icons\Small.png" />
+    <None Include="GalleryPackages\Create\Icons\Wide.png" />
+    <None Include="GalleryPackages\Create\Screenshots\Image01.png" />
+    <None Include="GalleryPackages\Create\strings\resources.resjson" />
+    <Content Include="Global.asax" />
+    <TypeScriptCompile Include="Client\Program.ts">
+      <TsLintLevel>Minimal</TsLintLevel>
+    </TypeScriptCompile>
+    <Content Include="Client\TypeReferences.d.ts" />
+    <TypeScriptCompile Include="Client\Shared\Constants.ts" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <PortalDefinition Include="Client\extension.pdl">
+      <SubType>Designer</SubType>
+    </PortalDefinition>
+    <PortalDefinition Include="Client\Resource\Summary\ResourceBlade.pdl">
+      <SubType>Designer</SubType>
+    </PortalDefinition>
+    <PortalDefinition Include="Client\QuickStart\QuickStart.pdl" />
+    <PortalDefinition Include="Client\Browse\Browse.pdl">
+      <SubType>Designer</SubType>
+    </PortalDefinition>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <ExtensionReference Include="Client\_extensions\Hubs\HubsExtension.pde" />
+    <ExtensionReference Include="Client\_extensions\AAD\Microsoft_Azure_AD.pde" />
+    <Content Include="App_Data\Gallery\Microsoft.GalleryPackage.1.0.1-preview.azpkg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <PortalDefinition Include="Client\Resource\Create\Create.pdl" />
+    <None Include="GalleryPackages\Create\DeploymentTemplates\CreateResource.json" />
+    <None Include="GalleryPackages\Create\Manifest.json" />
+    <None Include="GalleryPackages\Create\UIDefinition.json" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <SvgTypeScriptCompile Include="Client\_generated\Svg.ts">
+      <Namespace>JWTestExtension</Namespace>
+      <IsAmd>true</IsAmd>
+    </SvgTypeScriptCompile>
+    <TypeScriptCompile Include="Client\_generated\BladeReferences.ts">
+      <TsLintLevel>Minimal</TsLintLevel>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Client\_generated\ControlReferences.ts">
+      <TsLintLevel>Minimal</TsLintLevel>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Client\_generated\ExtensionDefinition.ts">
+      <TsLintLevel>Minimal</TsLintLevel>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Client\_generated\Manifest.ts">
+      <TsLintLevel>Minimal</TsLintLevel>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Client\_generated\TypeMetadataModels.d.ts">
+      <TsLintLevel>Minimal</TsLintLevel>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Client\_generated\ViewModelFactories.ts">
+      <TsLintLevel>Minimal</TsLintLevel>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Definitions\FxEnvironment.d.ts" />
+    <TypeScriptCompile Include="Definitions\FxEnvironmentExtensions.d.ts" />
+    <TypeScriptCompile Include="Definitions\Html5.d.ts" />
+    <TypeScriptCompile Include="Definitions\jquery.d.ts" />
+    <TypeScriptCompile Include="Definitions\knockout.d.ts" />
+    <TypeScriptCompile Include="Definitions\knockout.projections.d.ts" />
+    <TypeScriptCompile Include="Definitions\MsPortalFx.d.ts" />
+    <TypeScriptCompile Include="Definitions\Fx.d.ts" />
+    <TypeScriptCompile Include="Definitions\Q.d.ts" />
+    <TypeScriptCompile Include="Definitions\require.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Client\ClientResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClientResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\ApplicationConfiguration.cs" />
+    <Compile Include="Configuration\CustomApplicationContext.cs" />
+    <Compile Include="Controllers\Definition.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Client\ClientResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <BundleId>SamplesExtension</BundleId>
+      <SubType>Designer</SubType>
+      <LastGenOutput>ClientResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JWTestExtension.DataModels\JWTestExtension.DataModels.csproj">
+      <Project>{6fe0818d-0374-452d-9981-9959f469de69}</Project>
+      <Name>JWTestExtension.DataModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <!-- default to v14.0 if it exsts else fallback to 12.0 -->
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == '' And Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v14.0\WebApplications')">14.0</VisualStudioVersion>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == '' And Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v12.0\WebApplications')">12.0</VisualStudioVersion>
+    <WebToolsPath Condition="'$(WebToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications</WebToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" Condition="'$(ExtendedTargetsPath)' == ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="false" />
+  <Import Project="$(ExtendedTargetsPath)\Microsoft.CSharp.targets" Condition="'$(ExtendedTargetsPath)' != ''" />
+  <Import Project="$(WebToolsPath)\Microsoft.WebApplication.targets" Condition="'$(WebToolsPath)' != '' And '$(ExtendedTargetsPath)' == ''" />
+  <Import Project="$(ExtendedTargetsPath)\Microsoft.WebApplication.targets" Condition="'$(ExtendedTargetsPath)' != ''" />
+  <Import Project="..\..\..\CoreXT.Dev.targets" Condition="Exists('..\..\..\CoreXT.Dev.targets')" />
+  <!--Target GenerateTargetFrameworkMonikerAttribute is generating a file that is being placed in the out folder resulting in build breaks -->
+  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>17966</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44300/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\..\packages\Microsoft.Portal.Tools.5.0.302.607\build\Microsoft.Portal.Tools.targets" Condition="Exists('..\..\packages\Microsoft.Portal.Tools.5.0.302.607\build\Microsoft.Portal.Tools.targets')" />
+  <Import Project="..\..\packages\\Microsoft.Azure.Gallery.AzureGalleryUtility.5.1.0.19\build\Microsoft.Azure.Gallery.AzureGalleryUtility.targets" Condition="Exists('..\..\packages\\Microsoft.Azure.Gallery.AzureGalleryUtility.5.1.0.19\build\Microsoft.Azure.Gallery.AzureGalleryUtility.targets')" />
+  <Import Project="..\..\packages\Microsoft.Portal.Tools.ContentUnbundler.5.0.302.607\build\Microsoft.Portal.Tools.ContentUnbundler.targets" Condition="Exists('..\..\packages\Microsoft.Portal.Tools.ContentUnbundler.5.0.302.607\build\Microsoft.Portal.Tools.ContentUnbundler.targets') AND '$(Configuration)' == 'Release'" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Portal.Tools.5.0.302.607\build\Microsoft.Portal.Tools.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Portal.Tools.5.0.302.607\build\Microsoft.Portal.Tools.targets'))" />
+    <Error Condition="!Exists('..\..\packages\\Microsoft.Azure.Gallery.AzureGalleryUtility.5.1.0.19\build\Microsoft.Azure.Gallery.AzureGalleryUtility.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\\Microsoft.Azure.Gallery.AzureGalleryUtility.5.1.0.19\build\Microsoft.Azure.Gallery.AzureGalleryUtility.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.Portal.Tools.ContentUnbundler.5.0.302.607\build\Microsoft.Portal.Tools.ContentUnbundler.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Portal.Tools.ContentUnbundler.5.0.302.607\build\Microsoft.Portal.Tools.ContentUnbundler.targets'))" />
+  </Target>
+</Project>
